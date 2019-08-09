@@ -1,7 +1,13 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
+const app = express();
+const port = 3000;
+const bodyParser = require('body-parser');
 
-app.get('/', (req, res) => res.send('Hello World!'))
+app.use(express.static('public/dist'));
+app.use(bodyParser.json());
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+// app.get('/', (req, res) => res.send('Hello World!'));
+
+app.listen(port, () =>
+  console.log(`Nike Review Component listening on port ${port}!`)
+);
