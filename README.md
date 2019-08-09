@@ -2,11 +2,7 @@
 
 # Product Info and Reviews React Comoponent
 
-To install dependencies:
-⋅⋅\* npm install
-
-To run webpack:
-⋅⋅\* npm run build
-
-To seed data:
-⋅⋅\* npm run seeddata
+To install dependencies, webpack and seed data:
+⋅⋅*npm install
+⋅⋅*npm run build
+⋅⋅*npm run seeddata
