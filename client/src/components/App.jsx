@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -6,11 +7,27 @@ export default class App extends React.Component {
     this.state = {
       dummydata: []
     };
+    this.getData = this.getData.bind(this);
+  }
+
+  getData() {
+    axios
+      .get('/api/reviews')
+      .then(data => {
+        console.log(data);
+        this.setState({
+          dummydata: data.data
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
 
   render() {
     return (
       <div>
+        <button onClick={this.getData}>GetData</button>
         <h1>Hello from App</h1>
       </div>
     );

@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/NikeReview', { useNewUrlParser: true });
-const dummydata = require('../dummydata.json');
+mongoose.connect('mongodb://localhost:27017/NikeReview', {
+  useNewUrlParser: true
+});
 
-console.log(dummydata);
 const NikeReview = mongoose.model('NikeReview', {
   shoe_id: Number,
   review_star: Number,
@@ -15,12 +15,4 @@ const NikeReview = mongoose.model('NikeReview', {
   review_title: String
 });
 
-NikeReview.collection.insertMany(dummydata, function(err) {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log(
-      `you have seeded ${dummydata.length} docs into your mongoose database`
-    );
-  }
-});
+module.exports = NikeReview;
