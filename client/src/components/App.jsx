@@ -12,7 +12,7 @@ export default class App extends React.Component {
 
   getData() {
     axios
-      .get('/api/reviews')
+      .get('/api/reviews', { params: { shoe_id: 37 } })
       .then(data => {
         console.log(data);
         this.setState({
