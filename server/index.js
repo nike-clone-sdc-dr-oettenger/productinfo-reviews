@@ -6,6 +6,8 @@ const NikeReview = require('../db/index.js');
 
 app.use(express.static('public/dist'));
 app.use(bodyParser.json());
+process.title = 'NikeReview'
+
 
 app.get('/api/reviews', (req, res) => {
   let shoe = req.query.shoe_id;
