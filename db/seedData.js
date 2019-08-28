@@ -10,6 +10,7 @@ const seedScript = numberOfCollections => {
       (nb = 3),
       (ext_word_list = null)
     );
+    newReview.shoe_id = Math.floor(Math.random() * 100);
     newReview.review_username = faker.internet.userName();
     newReview.review_date = faker.date.past();
     newReview.review_location = `${faker.address.city()}, ${faker.address.stateAbbr()}, US `;
@@ -24,7 +25,7 @@ const seedScript = numberOfCollections => {
   }
 
   if (json.length >= numberOfCollections) {
-    NikeReview.collection.insertMany(json, function(err) {
+    NikeReview.insertMany(json, function(err) {
       if (err) {
         console.log(err);
       } else {
@@ -37,3 +38,5 @@ const seedScript = numberOfCollections => {
 };
 
 seedScript(100);
+
+//review update
