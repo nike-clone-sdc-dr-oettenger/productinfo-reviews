@@ -12,9 +12,17 @@ export default class App extends React.Component {
     this.getData = this.getData.bind(this);
   }
 
+  componentDidMount() {
+    this.getData();
+  }
+
   getData() {
     axios
-      .get('/api/reviews', { params: { shoe_id: 37 } })
+      .get(
+        'http://localhost:3000/api/reviews',
+        { crossDomain: true },
+        { params: { shoe_id: 83 } }
+      )
       .then(data => {
         console.log(data);
         this.setState({
@@ -89,7 +97,7 @@ export default class App extends React.Component {
         <button>Free Shipping & Returns</button>
         <br />
         <div>
-          <ReviewList />
+          <ReviewList review={this.state.dummydata} />
         </div>
         <br />
       </div>

@@ -3,11 +3,13 @@ const app = express();
 const port = 3000;
 const bodyParser = require('body-parser');
 const NikeReview = require('../db/index.js');
+const cors = require('cors');
 
 app.use(express.static('public/dist'));
 app.use(bodyParser.json());
-process.title = 'NikeReview'
+app.use(cors());
 
+process.title = 'NikeReview';
 
 app.get('/api/reviews', (req, res) => {
   let shoe = req.query.shoe_id;
