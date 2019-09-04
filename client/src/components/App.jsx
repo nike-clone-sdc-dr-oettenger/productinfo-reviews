@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import ReviewList from './ReviewList.jsx';
+import styles from './styles.css';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -35,8 +36,11 @@ export default class App extends React.Component {
   }
 
   render() {
+    const font = {
+      'font-family': 'Heebo'
+    };
     return (
-      <div>
+      <div style={styles.nikeFont}>
         <button onClick={this.getData}>GetData</button>
         <div id="typePrice">
           <h2>Running Shoe $250</h2>
