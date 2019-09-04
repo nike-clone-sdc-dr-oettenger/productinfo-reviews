@@ -36,48 +36,96 @@ export default class App extends React.Component {
   }
 
   render() {
-    const font = {
-      'font-family': 'Heebo'
+    const fixingPixel = {
+      marginLeft: '-38px'
     };
+
     return (
       <div style={styles.nikeFont}>
         <button onClick={this.getData}>GetData</button>
-        <div id="typePrice">
-          <h2>Running Shoe $250</h2>
+        <div className="row" id="typePrice" style={styles.shoePrice}>
+          <div className="col-8">Running Shoe</div>
+          <div className="col-4">$250</div>
         </div>
-        <div id="producTitle">
+        <div id="productTitle" style={styles.shoeTitle}>
           <h1>Nike ZoomX Vaporfly Next%</h1>
         </div>
-        <div id="shoesize">Select Size Size Guide</div>
-        <button type="button">M 4 / W 5.5</button>
-        <button type="button">M 4.5 / W 6</button>
-        <br />
-        <button type="button">M 5 / W 6.5</button>
-        <button type="button">M 5.5 / W 7</button>
-        <br />
-        <button type="button">M 6 / W 7.5</button>
-        <button type="button">M 6.5 / W 8</button>
-        <br />
-        <button type="button">M 7 / W 8.5</button>
-        <button type="button">M 7.5 / W 9</button>
-        <br />
-        <button type="button">M 8 / W 9.5</button>
-        <button type="button">M 8.5 / W 10</button>
-        <br />
-        <button type="button">M 9 / W 10.5</button>
-        <button type="button">M 9.5 / W 11</button>
-        <br />
-        <button type="button">M 10 / W 11.5</button>
-        <button type="button">M 10.5 / W 12</button>
-        <br />
-        <button type="button">M 11 / W 12.5</button>
-        <button type="button">M 11.5 / W 13</button>
-        <br />
-        <button type="button">M 12 / W 13.5</button>
-        <button type="button">M 12.5 / W 14</button>
-        <br />
-        <button type="button">M 13 / W 14.5</button>
-        <br />
+        <div id="shoesize" className="row" style={styles.shoeSize}>
+          <div className="col-8">Select Size</div>
+          <div className="col-4" style={fixingPixel}>
+            Size Guide
+          </div>
+        </div>
+        <div>
+          <button variant="light" type="button">
+            M 4 / W 5.5
+          </button>
+          <button variant="light" type="button">
+            M 4.5 / W 6
+          </button>
+          <br />
+          <button variant="light" type="button">
+            M 5 / W 6.5
+          </button>
+          <button variant="light" type="button">
+            M 5.5 / W 7
+          </button>
+          <br />
+          <button variant="light" type="button">
+            M 6 / W 7.5
+          </button>
+          <button variant="light" type="button">
+            M 6.5 / W 8
+          </button>
+          <br />
+          <button variant="light" type="button">
+            M 7 / W 8.5
+          </button>
+          <button variant="light" type="button">
+            M 7.5 / W 9
+          </button>
+          <br />
+          <button variant="light" type="button">
+            M 8 / W 9.5
+          </button>
+          <button variant="light" type="button">
+            M 8.5 / W 10
+          </button>
+          <br />
+          <button variant="light" type="button">
+            M 9 / W 10.5
+          </button>
+          <button variant="light" type="button">
+            M 9.5 / W 11
+          </button>
+          <br />
+          <button variant="light" type="button">
+            M 10 / W 11.5
+          </button>
+          <button variant="light" type="button">
+            M 10.5 / W 12
+          </button>
+          <br />
+          <button variant="light" type="button">
+            M 11 / W 12.5
+          </button>
+          <button variant="light" type="button">
+            M 11.5 / W 13
+          </button>
+          <br />
+          <button variant="light" type="button">
+            M 12 / W 13.5
+          </button>
+          <button variant="light" type="button">
+            M 12.5 / W 14
+          </button>
+          <br />
+          <button variant="light" type="button">
+            M 13 / W 14.5
+          </button>
+          <br />
+        </div>
+
         <br />
         <button>Add To Cart</button>
         <br />

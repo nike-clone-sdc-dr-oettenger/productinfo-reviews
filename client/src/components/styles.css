@@ -3,3 +3,18 @@
 .nikeFont {
   font-family: 'Heebo', sans-serif;
 }
+
+.shoePrice {
+  display: flex;
+  font-size: 12px;
+}
+
+.shoeTitle {
+  display: flex;
+  font-size: 26px;
+}
+
+.shoeSize {
+  display: flex;
+  font-size: 12px;
+}
