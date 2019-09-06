@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000;
+// const port = process.env.PORT || 3000;
 const bodyParser = require('body-parser');
 const NikeReview = require('../db/index.js');
 
-var server = app.listen(port, function() {
-  console.log('Server running at http://127.0.0.1:' + port + '/');
+app.configure(function() {
+  app.set('port', process.env.PORT || 3000);
 });
 
 app.use(express.static('public/dist'));
