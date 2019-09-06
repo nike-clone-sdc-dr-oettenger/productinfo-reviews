@@ -7,7 +7,8 @@
     "server": "nodemon server/index.js",
     "build": "webpack -d --watch",
     "startdev": "webpack-dev-server",
-    "seeddata": "node db/seedData.js"
+    "seeddata": "node db/seedData.js",
+    "start": "concurrently --kill-others \"npm run seeddata\" \"npm run server\""
   },
   "babel": {
     "presets": [
@@ -25,6 +26,7 @@
     "bootstrap": "^4.3.1",
     "build": "^0.1.4",
     "chai": "^4.2.0",
+    "concurrently": "^4.1.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "faker": "^4.1.0",
