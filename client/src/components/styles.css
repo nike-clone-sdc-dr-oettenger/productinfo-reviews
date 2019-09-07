@@ -1,9 +1,23 @@
-.DottedBox {
-  margin: 40px;
-  border: 5px dotted pink;
+@import url('https://fonts.googleapis.com/css?family=Heebo&display=swap');
+
+.Body {
+  font-family: 'Heebo', sans-serif;
 }
 
-.DottedBox_content {
-  font-size: 15px;
-  text-align: center;
+.Row {
+  display: flex;
+}
+
+/* Create two equal columns that sits next to each other */
+.ColumnA {
+  display: flex;
+  margin-right: auto;
+}
+.ColumnB {
+  display: flex;
+  margin-left: auto;
+}
+
+.buttonGrid {
+  border: dotted pink;
 }

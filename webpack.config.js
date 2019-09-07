@@ -5,7 +5,6 @@ module.exports = {
   entry: './client/src/components/Index.jsx',
   output: {
     path: __dirname + '/public/dist',
-    //^^^^^^^^CHECK UP ON THIS
     filename: 'bundle.js'
   },
   module: {
