@@ -9,7 +9,7 @@
     "startdev": "webpack-dev-server",
     "seeddata": "node db/seedData.js",
     "rundb": "mongo",
-    "start": "concurrently --kill-others \"npm run seeddata\" \"npm run server\""
+    "start": "concurrently --kill-others \"npm run server\""
   },
   "babel": {
     "presets": [
