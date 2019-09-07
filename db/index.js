@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/NikeReview', {
-  useNewUrlParser: true
-});
+mongoose.connect(
+  'mongodb+srv://justinrobertohara:root@justincluster-pvv5d.mongodb.net/test?retryWrites=true&w=majority',
+  {
+    useNewUrlParser: true
+  }
+);
 
 const NikeReview = mongoose.model('NikeReview', {
   shoe_id: Number,

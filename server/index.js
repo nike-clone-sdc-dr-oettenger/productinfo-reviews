@@ -1,12 +1,8 @@
 const express = require('express');
 const app = express();
-// const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 const bodyParser = require('body-parser');
 const NikeReview = require('../db/index.js');
-
-app.configure(function() {
-  app.set('port', process.env.PORT || 3000);
-});
 
 app.use(express.static('public/dist'));
 app.use(bodyParser.json());
