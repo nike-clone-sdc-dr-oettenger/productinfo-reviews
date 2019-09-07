@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import ReviewList from './ReviewList.jsx';
+import styles from './styles.css';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ export default class App extends React.Component {
 
   getData() {
     axios
-      .get('/api/reviews', { params: { shoe_id: 37 } })
+      .get('/api/reviews', { params: { shoe_id: 95 } })
       .then(data => {
         console.log(data);
         this.setState({
@@ -29,6 +30,9 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
+        <div className="DottedBox">
+          <p className="DottedBox_content">Get started with CSS styling</p>
+        </div>
         <button onClick={this.getData}>GetData</button>
         <div id="typePrice">
           <h2>Running Shoe $250</h2>
