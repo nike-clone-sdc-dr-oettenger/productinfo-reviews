@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import ReviewList from './ReviewList.jsx';
 import styles from './styles.css';
+import ReadMoreModal from './ReadMoreModal.jsx';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -10,12 +11,15 @@ export default class App extends React.Component {
       dummydata: [],
       sizes: [{}],
       readMore: false,
-      reading: false
+      reading: false,
+      showModal: false
     };
     this.getData = this.getData.bind(this);
 
     this.readMore = this.readMore.bind(this);
     this.shipping = this.shipping.bind(this);
+    this.handleOpenModal = this.handleOpenModal.bind(this);
+    this.handleCloseModal = this.setState.bind(this);
   }
 
   getData() {
@@ -43,6 +47,14 @@ export default class App extends React.Component {
     this.setState({
       shipping: !this.state.shipping
     });
+  }
+
+  handleOpenModal() {
+    this.setState({ showModal: true });
+  }
+
+  handleCloseModal() {
+    this.setState({ showModal: false });
   }
 
   render() {
@@ -157,11 +169,8 @@ export default class App extends React.Component {
             <li>Style: AO4568-300</li>
           </ul>
         </div>
-        <div id="readMoreButton">
-          <button id="readMoreButton" onClick={this.readMore}>
-            Read More
-          </button>
-          {this.state.readMore === true && <h2>more info</h2>}
+        <div id="readMoreModal">
+          <ReadMoreModal />
         </div>
         <div id="freeShippingButton">
           <button id="freeShippingButton" onClick={this.shipping}>
