@@ -1,23 +1,43 @@
 @import url('https://fonts.googleapis.com/css?family=Heebo&display=swap');
 
-.Body {
+.JBody {
   font-family: 'Heebo', sans-serif;
+  margin-right: 50px;
 }
 
-.Row {
+.JRow {
   display: flex;
 }
 
 /* Create two equal columns that sits next to each other */
-.ColumnA {
+.JColumnA {
   display: flex;
   margin-right: auto;
 }
-.ColumnB {
+.JColumnB {
   display: flex;
   margin-left: auto;
 }
 
-.buttonGrid {
-  border: dotted pink;
+.JbuttonGrid {
+  border: dotted black;
+}
+
+.jButton {
+  width: 50%;
+  height: 48px;
+  display: inline-flex;
+  justify-content: center;
+  border-radius: 4px;
+  border-width: 1px;
+  padding: 20px;
+}
+
+.jButton:hover {
+  border: black;
+  color: black;
+}
+
+.jButton:checked {
+  background-color: yellow;
 }

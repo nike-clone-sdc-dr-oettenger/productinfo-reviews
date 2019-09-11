@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import ReviewList from './ReviewList.jsx';
 import styles from './styles.css';
+
 import ReadMoreModal from './ReadMoreModal.jsx';
 
 export default class App extends React.Component {
@@ -59,92 +60,92 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div className="Body">
+      <div className="JBody">
         <button onClick={this.getData}>GetData</button>
-        <div className="Row">
-          <div className="ColumnA">Running Shoe</div>
-          <div className="ColumnB">$250</div>
+        <div className="JRow">
+          <div className="JColumnA">Running Shoe</div>
+          <div className="JColumnB">$250</div>
         </div>
 
         <div id="producTitle">
           <h1>Nike ZoomX Vaporfly Next%</h1>
         </div>
-        <div id="shoesize" className="Row">
-          <div className="ColumnA">Select Size</div>
-          <div className="ColumnB">Size Guide</div>
+        <div id="shoesize" className="JRow">
+          <div className="JColumnA">Select Size</div>
+          <div className="JColumnB">Size Guide</div>
         </div>
 
         <br />
 
-        <div className="buttonGrid">
-          <div id="buttonRow" className="Row">
-            <button className="ColumnA" type="radio">
+        <div className="JbuttonGrid">
+          <div id="buttonRow" className="JRow">
+            <button className="jButton" type="radio">
               M 5 / W 6.5
             </button>
-            <button className="ColumnB" type="radio">
+            <button className="jButton" type="radio">
               M 5.5 / W 7
             </button>
           </div>
-          <div id="buttonRow" className="Row">
-            <button className="ColumnA" type="radio">
+          <div id="buttonRow" className="JRow">
+            <button className="jButton" type="radio">
               M 6 / W 7.5
             </button>
-            <button className="ColumnB" type="radio">
+            <button className="jButton" type="radio">
               M 6.5 / W 8
             </button>
           </div>
-          <div id="buttonRow" className="Row">
-            <button className="ColumnA" type="radio">
+          <div id="buttonRow" className="JRow">
+            <button className="jButton" type="radio">
               M 7 / W 8.5
             </button>
-            <button className="ColumnB" type="radio">
+            <button className="jButton" type="radio">
               M 7.5 / W 9
             </button>
           </div>
 
-          <div id="buttonRow" className="Row">
-            <button className="ColumnA" type="radio">
+          <div id="buttonRow" className="JRow">
+            <button className="jButton" type="radio">
               M 8 / W 9.5
             </button>
-            <button className="ColumnB" type="radio">
+            <button className="jButton" type="radio">
               M 8.5 / W 10
             </button>
           </div>
-          <div id="buttonRow" className="Row">
-            <button className="ColumnA" type="radio">
+          <div id="buttonRow" className="JRow">
+            <button className="jButton" type="radio">
               M 9 / W 10.5
             </button>
-            <button className="ColumnB" type="radio">
+            <button className="jButton" type="radio">
               M 9.5 / W 11
             </button>
           </div>
-          <div id="buttonRow" className="Row">
-            <button className="ColumnA" type="radio">
+          <div id="buttonRow" className="JRow">
+            <button className="jButton" type="radio">
               M 10 / W 11.5
             </button>
-            <button className="ColumnB" type="radio">
+            <button className="jButton" type="radio">
               M 10.5 / W 12
             </button>
           </div>
 
-          <div id="buttonRow" className="Row">
-            <button className="ColumnA" type="radio">
+          <div id="buttonRow" className="JRow">
+            <button className="jButton" type="radio">
               M 11 / W 12.5
             </button>
-            <button className="ColumnB" type="radio">
+            <button className="jButton" type="radio">
               M 11.5 / W 13
             </button>
           </div>
-          <div id="buttonRow" className="Row">
-            <button className="ColumnA" type="radio">
+          <div id="buttonRow" className="JRow">
+            <button className="jButton" type="radio">
               M 12 / W 13.5
             </button>
-            <button className="ColumnB" type="radio">
+            <button className="jButton" type="radio">
               M 12.5 / W 14
             </button>
           </div>
-          <div id="buttonRow" className="Row">
-            <button className="ColumnA" type="radio">
+          <div id="buttonRow" className="JRow">
+            <button className="jButton" type="radio">
               M 13 / W 14.5
             </button>
           </div>

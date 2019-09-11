@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Heebo&display=swap');
+
+.JBody {
+  font-family: 'Heebo', sans-serif;
+  margin-right: 50px;
+}
+
+.JRow {
+  display: flex;
+}
+
+/* Create two equal columns that sits next to each other */
+.JColumnA {
+  display: flex;
+  margin-right: auto;
+}
+.JColumnB {
+  display: flex;
+  margin-left: auto;
+}
+
+.JbuttonGrid {
+  border: dotted black;
+}
+
+.jButton {
+  display: flex;
+  margin-right: auto;
+  height: 48px;
+  width: 100%;
+  display: inline-flex;
+  border-radius: 4px;
+}
