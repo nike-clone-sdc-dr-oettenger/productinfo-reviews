@@ -2,14 +2,32 @@
 
 .JBody {
   font-family: 'Heebo', sans-serif;
-  margin-right: 50px;
+  /* border: dotted black; */
 }
 
+.JTitle {
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+.JRowTitle {
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.JproductTitle {
+  font-size: 26px;
+}
 .JRow {
   display: flex;
 }
 
-/* Create two equal columns that sits next to each other */
+.JRowSizeGuide {
+  display: flex;
+  padding-top: 26px;
+}
+
 .JColumnA {
   display: flex;
   margin-right: auto;
@@ -19,8 +37,10 @@
   margin-left: auto;
 }
 
-.JbuttonGrid {
-  border: dotted black;
+.JColumnBGuide {
+  display: flex;
+  margin-left: auto;
+  color: grey;
 }
 
 .jButton {
@@ -30,14 +50,129 @@
   justify-content: center;
   border-radius: 4px;
   border-width: 1px;
-  padding: 20px;
+  padding-top: 18px;
+  padding-right: 20px;
+  padding-bottom: 38px;
+  padding-left: 20px;
+}
+.JbuttonGrid {
+  padding-bottom: 12px;
 }
 
 .jButton:hover {
-  border: black;
-  color: black;
+  border-color: black;
+}
+.jButton:focus {
+  background-color: black;
+  color: white;
+  outline: 0;
 }
 
 .jButton:checked {
   background-color: yellow;
+}
+.JaddtoCart {
+  background-color: black;
+  color: white;
+  justify-content: center;
+  width: 100%;
+  justify-content: center;
+  outline: 0;
+  border-radius: 25px;
+  padding-top: 18px;
+  padding-right: 24px;
+  padding-bottom: 18px;
+  padding-left: 24px;
+}
+
+.JHeart {
+  /* background-color: black;
+  color: white; */
+  justify-content: center;
+  width: 100%;
+  justify-content: center;
+  outline: 0;
+  border-radius: 25px;
+  padding-top: 18px;
+  padding-right: 24px;
+  padding-bottom: 18px;
+  padding-left: 24px;
+}
+
+.astext {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: bold;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+.astext:focus {
+  outline: 0;
+}
+
+.freeShippingButton {
+  outline: 0;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.freeShippingButton:focus {
+  outline: 0;
+}
+
+.addToCart {
+  padding-bottom: 8px;
+}
+
+.heart {
+  padding-bottom: 36px;
+}
+
+.JDescription {
+  padding-bottom: 45px;
+  line-height: 2;
+}
+
+.JshippingList {
+  line-height: 150%;
+}
+
+.JShippingP {
+  line-height: 1.6;
+}
+
+.JaddtoCart:focus {
+  outline: 0;
+}
+
+.JHeart:focus {
+  outline: 0;
+}
+
+.JModalbutton {
+  position: absolute;
+  right: 0;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: bold;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+.JModalbutton:focus {
+  outline: 0;
 }

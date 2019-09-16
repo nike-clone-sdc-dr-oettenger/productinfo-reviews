@@ -25,9 +25,9 @@ export default class App extends React.Component {
 
   getData() {
     axios
-      .get('/api/reviews', { params: { shoe_id: 95 } })
+      .get('/api/reviews', { params: { shoe_id: 16 } })
       .then(data => {
-        console.log(data);
+        console.log('run this data', data);
         this.setState({
           dummydata: data.data
         });
@@ -35,6 +35,10 @@ export default class App extends React.Component {
       .catch(err => {
         console.log(err);
       });
+  }
+
+  componentDidMount() {
+    this.getData();
   }
 
   readMore() {
@@ -62,22 +66,24 @@ export default class App extends React.Component {
     return (
       <div className="JBody">
         <button onClick={this.getData}>GetData</button>
-        <div className="JRow">
+        <div className="JRowTitle">
           <div className="JColumnA">Running Shoe</div>
           <div className="JColumnB">$250</div>
         </div>
 
-        <div id="producTitle">
-          <h1>Nike ZoomX Vaporfly Next%</h1>
+        <div id="productTitle">
+          <span className="JproductTitle">
+            Nike ZoomX Vaporfly <br></br> Next%{' '}
+          </span>
         </div>
-        <div id="shoesize" className="JRow">
+        <div id="shoesize" className="JRowSizeGuide">
           <div className="JColumnA">Select Size</div>
-          <div className="JColumnB">Size Guide</div>
+          <div className="JColumnBGuide">Size Guide</div>
         </div>
 
         <br />
 
-        <div className="JbuttonGrid">
+        <div className="JbuttonGrid" className="JbuttonGrid">
           <div id="buttonRow" className="JRow">
             <button className="jButton" type="radio">
               M 5 / W 6.5
@@ -102,7 +108,6 @@ export default class App extends React.Component {
               M 7.5 / W 9
             </button>
           </div>
-
           <div id="buttonRow" className="JRow">
             <button className="jButton" type="radio">
               M 8 / W 9.5
@@ -127,7 +132,6 @@ export default class App extends React.Component {
               M 10.5 / W 12
             </button>
           </div>
-
           <div id="buttonRow" className="JRow">
             <button className="jButton" type="radio">
               M 11 / W 12.5
@@ -150,13 +154,13 @@ export default class App extends React.Component {
             </button>
           </div>
         </div>
-        <div id="addToCart">
-          <button>Add To Cart</button>
+        <div id="addToCart" className="addToCart">
+          <button className="JaddtoCart">Add To Cart</button>
         </div>
-        <div id="heart">
-          <button>Favorite Heart</button>
+        <div id="heart" className="heart">
+          <button className="JHeart">Favorite ♡</button>
         </div>
-        <div id="description">
+        <div id="description" className="JDescription">
           <p>
             The Nike ZoomX Vaporfly NEXT% clears your path to record-breaking
             speed with a lighter design and faster feel than before. With more
@@ -173,19 +177,25 @@ export default class App extends React.Component {
         <div id="readMoreModal">
           <ReadMoreModal />
         </div>
-        <div id="freeShippingButton">
-          <button id="freeShippingButton" onClick={this.shipping}>
+        <hr></hr>
+        <div id="freeShippingButton" onClick={this.shipping}>
+          <button id="freeShippingButton" className="freeShippingButton">
             Free Shipping & Returns
           </button>
           {this.state.shipping && (
-            <p>
+            <div className="JShippingP">
               Free standard shipping and 30-day free returns, only with
-              NikePlus. Learn more. Return policy exclusions apply. Standard /
-              Arrives 2-4 Business Days Two-Day / Arrives 2-3 Business Days
-              Next-Day / Arrives 1-2 Business Days
-            </p>
+              NikePlus. Learn more. Return policy exclusions apply.
+              <ul className="JshippingList">
+                <li>Standard / Arrives 2-4 Business Days</li>
+                <li>Two-Day / Arrives 2-3</li>
+                <li>Business Days Next-Day / Arrives 1-2 Business Days</li>
+              </ul>
+            </div>
           )}
         </div>
+        <hr></hr>
+
         <div id="reviewList">
           <ReviewList />
         </div>
