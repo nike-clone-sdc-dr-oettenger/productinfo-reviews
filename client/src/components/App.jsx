@@ -9,7 +9,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dummydata: [],
+      reviews: [],
       sizes: [{}],
       readMore: false,
       reading: false,
@@ -27,9 +27,8 @@ export default class App extends React.Component {
     axios
       .get('/api/reviews', { params: { shoe_id: 16 } })
       .then(data => {
-        console.log('run this data', data);
         this.setState({
-          dummydata: data.data
+          reviews: data.data
         });
       })
       .catch(err => {
@@ -80,9 +79,7 @@ export default class App extends React.Component {
           <div className="JColumnA">Select Size</div>
           <div className="JColumnBGuide">Size Guide</div>
         </div>
-
         <br />
-
         <div className="JbuttonGrid" className="JbuttonGrid">
           <div id="buttonRow" className="JRow">
             <button className="jButton" type="radio">
@@ -197,7 +194,7 @@ export default class App extends React.Component {
         <hr></hr>
 
         <div id="reviewList">
-          <ReviewList />
+          <ReviewList reviews={this.state.reviews} />
         </div>
       </div>
     );

@@ -19,6 +19,19 @@
 .JproductTitle {
   font-size: 26px;
 }
+
+.JReviews {
+  display: flex;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.JColumnBReviews {
+  display: flex;
+  margin-left: auto;
+  font-size: 20px;
+  font-weight: bold;
+}
 .JRow {
   display: flex;
 }
