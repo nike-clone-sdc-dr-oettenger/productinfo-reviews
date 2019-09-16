@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Heebo&display=swap');
 
 .JBody {
-  font-family: 'Heebo', sans-serif;
   /* border: dotted black; */
+}
+
+.JBodyReviewList {
+  font-family: 'Heebo', sans-serif;
+  padding-top: 20px;
 }
 
 .JTitle {
@@ -24,6 +28,42 @@
   display: flex;
   font-weight: bold;
   font-size: 20px;
+}
+
+.JReviewContainer {
+  font-family: 'Heebo', sans-serif;
+  padding-top: 25px;
+}
+
+.jWriteReview {
+  font-family: 'Heebo', sans-serif;
+}
+
+.jWriteReviewColumnA {
+  display: flex;
+  margin-left: auto;
+}
+.jWriteReviewColumnB {
+  display: flex;
+  margin-right: auto;
+}
+
+.jWriteReview {
+  font-family: 'Heebo', sans-serif;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.JReviewTitle {
+  display: flex;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.JReviewBody {
+  font-size: 16px;
+  line-height: 1.75;
 }
 
 .JColumnBReviews {
@@ -48,6 +88,22 @@
 .JColumnB {
   display: flex;
   margin-left: auto;
+}
+
+.JcolumnStarRow {
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.jcolumnStarA {
+  display: flex;
+  margin-right: auto;
+}
+.jcolumnStarB {
+  display: flex;
+  margin-left: auto;
+  color: grey;
 }
 
 .JColumnBGuide {

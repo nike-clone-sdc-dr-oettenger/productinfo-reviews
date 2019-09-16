@@ -25,7 +25,7 @@ export default class App extends React.Component {
 
   getData() {
     axios
-      .get('/api/reviews', { params: { shoe_id: 16 } })
+      .get('/api/reviews', { params: { shoe_id: 2 } })
       .then(data => {
         this.setState({
           reviews: data.data

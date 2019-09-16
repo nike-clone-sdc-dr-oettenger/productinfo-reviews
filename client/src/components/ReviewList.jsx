@@ -24,7 +24,7 @@ export default class ReviewList extends React.Component {
       console.log('passing down an array of reviews', this.props.reviews);
     }
     return (
-      <div className="JBody">
+      <div className="JBodyReviewList">
         <div id="reviewButton" className="JBody" onClick={this.review}>
           <div className="JReviews">
             <div className="JColumnA">
@@ -32,9 +32,9 @@ export default class ReviewList extends React.Component {
             </div>
             <div className="JColumnBReviews">★★★★★★</div>
           </div>
-          <hr></hr>
           {this.state.review && <Review reviews={this.props.reviews} />}
         </div>
+       
       </div>
     );
   }

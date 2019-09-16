@@ -1,34 +1,50 @@
 import React from 'react';
 
+var moment = require('moment');
+
 export default class Review extends React.Component {
   constructor(props) {
     super(props);
   }
 
+  // shoe_id: Number,
+  // review_star: Number,
+  // review_body: String,
+  // review_username: String,
+  // review_date: String,
+  // review_location: String,
+  // reviewTitle: String,
+  // upStar: Number,
+  // downStar: Number,
+  // review_title: String
+
   render() {
     const reviews = this.props.reviews;
-
-    //     downStar: 7
-    // review_body: "Consequatur vitae tenetur suscipit quam enim. Repellat hic consequatur aliquid. Ipsa dolorum excepturi accusamus. Sunt dolores nostrum quia. Enim soluta id natus dolore rerum.nullEt quis delectus voluptate neque et beatae cupiditate earum. Distinctio vero laudantium dolores nisi praesentium et. Ut cumque possimus suscipit maxime. Aut quis ut consequatur. Incidunt quis ut consequatur vitae similique et eos. Deleniti fugiat amet exercitationem.nullExpedita repellendus nostrum odio explicabo sequi. Incidunt ab ipsa doloremque non. In ipsa a magni dicta consequatur et qui ad. Eos quia sunt et hic quibusdam maiores dignissimos."
-    // review_location: "Lake Jaydon, PA, US "
-    // review_star: 4
-    // review_username: "Mac.Dicki"
-    // shoe_id: 16
-    // upStar: 4
-
-    {
-      console.log('from the review components', this.props.reviews);
-    }
-
     return (
       <div>
-        {reviews.map(review => {
-          return (
-            <div id="review">
-              <div></div>
-            </div>
-          );
-        })}
+        <div className="jWriteReview">
+          <div>{String.fromCharCode(9733).repeat(5)}  5 Stars</div>
+          <div>Write a Review</div>
+        </div>
+        <div id="reviews">
+          {reviews.map(review => {
+            return (
+              <div className="JReviewContainer">
+                <div className="JReviewTitle">{review.reviewTitle}</div>
+                <div className="JcolumnStarRow">
+                  <div className="jcolumnStarA">
+                    {String.fromCharCode(9733).repeat(review.upStar)}
+                  </div>
+                  <div className="jcolumnStarB">
+                    {review.review_username} -{' '}
+                    {moment(review.review_date).format('MMM D, YYYY')}
+                  </div>
+                </div>
+                <div className="JReviewBody">{review.review_body}</div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   }

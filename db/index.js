@@ -41,6 +41,7 @@ const NikeReviewScehma = new mongoose.Schema({
   review_username: String,
   review_date: String,
   review_location: String,
+  reviewTitle: String,
   upStar: Number,
   downStar: Number,
   review_title: String

@@ -17,7 +17,7 @@ const seedScript = numberOfCollections => {
     newReview.upStar = Math.floor(Math.random() * 11);
     newReview.downStar = Math.floor(Math.random() * 11);
     newReview.reviewTitle = faker.lorem.paragraph(
-      (nb_sentences = 3),
+      (nb_sentences = 1),
       (variable_nb_sentences = true),
       (ext_word_list = null)
     );
