@@ -7,16 +7,6 @@ export default class Review extends React.Component {
     super(props);
   }
 
-  // shoe_id: Number,
-  // review_star: Number,
-  // review_body: String,
-  // review_username: String,
-  // review_date: String,
-  // review_location: String,
-  // reviewTitle: String,
-  // upStar: Number,
-  // downStar: Number,
-  // review_title: String
 
   render() {
     const reviews = this.props.reviews;

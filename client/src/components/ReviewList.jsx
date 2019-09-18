@@ -4,7 +4,6 @@ import Review from './Review.jsx';
 export default class ReviewList extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       review: false
     };
@@ -12,17 +11,12 @@ export default class ReviewList extends React.Component {
   }
 
   review() {
-    console.log('you have pressed on the review div');
-
     this.setState({
       review: !this.state.review
     });
   }
 
   render() {
-    {
-      console.log('passing down an array of reviews', this.props.reviews);
-    }
     return (
       <div className="JBodyReviewList">
         <div id="reviewButton" className="JBody" onClick={this.review}>
@@ -34,7 +28,6 @@ export default class ReviewList extends React.Component {
           </div>
           {this.state.review && <Review reviews={this.props.reviews} />}
         </div>
-       
       </div>
     );
   }

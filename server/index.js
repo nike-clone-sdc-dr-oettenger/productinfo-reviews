@@ -25,7 +25,6 @@ app.get('/api/reviews', (req, res) => {
     }
   });
 
-  // res.status(200).send(`mongoose request for ${dbshoe}`);
 });
 
 app.listen(port, () =>

@@ -1,10 +1,14 @@
 const mongoose = require('mongoose');
-// mongoose.connect(
-//   'mongodb+srv://justinrobertohara:root@justincluster-pvv5d.mongodb.net/test?retryWrites=true&w=majority&authSource=true',
-//   {
-//     useNewUrlParser: true
-//   }
-// );
+// mongoose
+//   .connect(
+//     'mongodb+srv://justinrobertohara:root@justincluster-pvv5d.mongodb.net/test?retryWrites=true&w=majority&authSource=true',
+//     {
+//       useNewUrlParser: true
+//     }
+//   )
+//   .then(() => {
+//     console.log('you have connected to the mongo db');
+//   });
 
 // potential bug fix
 const options = {
@@ -13,7 +17,8 @@ const options = {
   reconnectInterval: 500, // Reconnect every 500ms
   poolSize: 10, // Maintain up to 10 socket connections
   // If not connected, return errors immediately rather than waiting for reconnect
-  bufferMaxEntries: 0
+  bufferMaxEntries: 0,
+  useNewUrlParser: true
 };
 
 const connectWithRetry = () => {
