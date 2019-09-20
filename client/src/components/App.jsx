@@ -64,7 +64,6 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="JBody">
-        <button onClick={this.getData}>GetData</button>
         <div className="JRowTitle">
           <div className="JColumnA">Running Shoe</div>
           <div className="JColumnB">$250</div>
@@ -76,81 +75,72 @@ export default class App extends React.Component {
           </span>
         </div>
         <div id="shoesize" className="JRowSizeGuide">
-          <div className="JColumnA">Select Size</div>
+          <div className="JColumnASize">Select Size</div>
           <div className="JColumnBGuide">Size Guide</div>
         </div>
         <br />
-        <div className="JbuttonGrid" className="JbuttonGrid">
-          <div id="buttonRow" className="JRow">
-            <button className="jButton" type="radio">
-              M 5 / W 6.5
-            </button>
-            <button className="jButton" type="radio">
-              M 5.5 / W 7
-            </button>
-          </div>
-          <div id="buttonRow" className="JRow">
-            <button className="jButton" type="radio">
-              M 6 / W 7.5
-            </button>
-            <button className="jButton" type="radio">
-              M 6.5 / W 8
-            </button>
-          </div>
-          <div id="buttonRow" className="JRow">
-            <button className="jButton" type="radio">
-              M 7 / W 8.5
-            </button>
-            <button className="jButton" type="radio">
-              M 7.5 / W 9
-            </button>
-          </div>
-          <div id="buttonRow" className="JRow">
-            <button className="jButton" type="radio">
-              M 8 / W 9.5
-            </button>
-            <button className="jButton" type="radio">
-              M 8.5 / W 10
-            </button>
-          </div>
-          <div id="buttonRow" className="JRow">
-            <button className="jButton" type="radio">
-              M 9 / W 10.5
-            </button>
-            <button className="jButton" type="radio">
-              M 9.5 / W 11
-            </button>
-          </div>
-          <div id="buttonRow" className="JRow">
-            <button className="jButton" type="radio">
-              M 10 / W 11.5
-            </button>
-            <button className="jButton" type="radio">
-              M 10.5 / W 12
-            </button>
-          </div>
-          <div id="buttonRow" className="JRow">
-            <button className="jButton" type="radio">
-              M 11 / W 12.5
-            </button>
-            <button className="jButton" type="radio">
-              M 11.5 / W 13
-            </button>
-          </div>
-          <div id="buttonRow" className="JRow">
-            <button className="jButton" type="radio">
-              M 12 / W 13.5
-            </button>
-            <button className="jButton" type="radio">
-              M 12.5 / W 14
-            </button>
-          </div>
-          <div id="buttonRow" className="JRow">
-            <button className="jButton" type="radio">
-              M 13 / W 14.5
-            </button>
-          </div>
+
+        <div className="jgrid-container">
+          <button className="jgrid-item" type="radio">
+            M 4 / W 5.5
+          </button>
+          <button className="jgrid-item" type="radio">
+            M 4.5 / W 6
+          </button>
+          <button className="jgrid-item" type="radio">
+            M 5 / W 6.5
+          </button>
+          <button className="jgrid-item" type="radio">
+            M 5.5 / W 7
+          </button>
+          <button className="jgrid-item" type="radio">
+            M 6 / W 7.5
+          </button>
+          <button className="jgrid-item" type="radio">
+            M 6.5 / W 8
+          </button>
+          <button className="jgrid-item" type="radio">
+            M 7 / W 8.5
+          </button>
+          <button className="jgrid-item" type="radio">
+            M 7.5 / W 9
+          </button>
+          <button className="jgrid-item" type="radio">
+            M 8 / W 9.5
+          </button>
+          <button className="jgrid-item" type="radio">
+            M 8.5 / W 10
+          </button>
+          <button className="jgrid-item" type="radio">
+            M 9 / W 10.5
+          </button>
+          <button className="jgrid-item" type="radio">
+            M 9.6 / W 11
+          </button>
+
+          <button className="jgrid-item" type="radio">
+            M 10 / W 11.5
+          </button>
+          <button className="jgrid-item" type="radio">
+            M 10.5 / W 12
+          </button>
+          <button className="jgrid-item" type="radio">
+            M 11 / W 12.5
+          </button>
+          <button className="jgrid-item" type="radio">
+            M 11.5 / W 13
+          </button>
+          <button className="jgrid-item" type="radio">
+            M 12 / W 13.5
+          </button>
+          <button className="jgrid-item" type="radio">
+            M 12.5 / W 14
+          </button>
+          <button className="jgrid-item" type="radio">
+            M 13 / W 14.5
+          </button>
         </div>
+
         <div id="addToCart" className="addToCart">
           <button className="JaddtoCart">Add To Cart</button>
         </div>
@@ -175,10 +165,19 @@ export default class App extends React.Component {
           <ReadMoreModal />
         </div>
         <hr></hr>
-        <div id="freeShippingButton" onClick={this.shipping}>
+        <div>
+          <div
+            id="freeShippingcontainer"
+            className="JFreeshipping"
+            onClick={this.shipping}
+          >
+            <div className="JFreeshippingA">Free Shipping & Returns</div>
+            <div className="JfreeshippingB">Carrot </div>
+          </div>
+          {/* <div id="freeShippingButton" onClick={this.shipping}>
           <button id="freeShippingButton" className="freeShippingButton">
             Free Shipping & Returns
-          </button>
+          </button> */}
           {this.state.shipping && (
             <div className="JShippingP">
               Free standard shipping and 30-day free returns, only with
@@ -196,6 +195,8 @@ export default class App extends React.Component {
         <div id="reviewList">
           <ReviewList reviews={this.state.reviews} />
         </div>
+        <hr></hr>
+        <div className="needHelp">Need Help? Chat now</div>
       </div>
     );
   }

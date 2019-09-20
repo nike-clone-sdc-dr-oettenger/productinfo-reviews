@@ -7,6 +7,42 @@
 .JBodyReviewList {
   font-family: 'Heebo', sans-serif;
   padding-top: 20px;
+  cursor: pointer;
+}
+
+.needHelp {
+  font-family: 'Heebo', sans-serif;
+  padding-bottom: 10px;
+}
+
+.jgrid-container {
+  display: grid;
+  grid-gap: 5px 5px;
+  grid-template-columns: auto auto;
+  padding-bottom: 15px;
+}
+
+.jgrid-item {
+  border: 3px solid #e5e5e5;
+  width: 100%;
+  height: 48px;
+  display: inline-flex;
+  justify-content: center;
+  border-radius: 4px;
+  border-width: 1px;
+  padding-top: 1px;
+  padding-right: 20px;
+  padding-bottom: 1px;
+  padding-left: 18px;
+}
+
+.jgrid-item:hover {
+  border-color: black;
+}
+.jgrid-item:focus {
+  background-color: black;
+  color: white;
+  outline: 0;
 }
 
 .JTitle {
@@ -81,9 +117,36 @@
   padding-top: 26px;
 }
 
+.JFreeshipping {
+  display: flex;
+  padding-top: 26px;
+  outline: 0;
+
+  cursor: pointer;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.JFreeshippingA {
+  display: flex;
+  margin-right: auto;
+}
+.JFreeshippingB {
+  display: flex;
+  margin-left: auto;
+}
+
 .JColumnA {
   display: flex;
   margin-right: auto;
+}
+
+.JColumnASize {
+  display: flex;
+  margin-right: auto;
+  font-weight: bold;
 }
 .JColumnB {
   display: flex;
@@ -112,22 +175,22 @@
   color: grey;
 }
 
-.jButton {
-  width: 50%;
-  height: 48px;
+/* .jButton {
+  width: 50%; */
+/* height: 48px;
   display: inline-flex;
   justify-content: center;
   border-radius: 4px;
   border-width: 1px;
   padding-top: 18px;
   padding-right: 20px;
-  padding-bottom: 38px;
-  padding-left: 20px;
+  padding-bottom: 38px; */
+/* padding-left: 20px;
 }
 .JbuttonGrid {
   padding-bottom: 12px;
-}
-
+} */
+/* 
 .jButton:hover {
   border-color: black;
 }
@@ -139,7 +202,7 @@
 
 .jButton:checked {
   background-color: yellow;
-}
+} */
 .JaddtoCart {
   background-color: black;
   color: white;
@@ -168,7 +231,9 @@
   padding-left: 24px;
 }
 
-.astext {
+.readMore {
+  font-weight: bold;
+  font-size: 20px;
   background: none;
   border: none;
   margin: 0;
@@ -179,7 +244,7 @@
   padding-top: 18px;
   padding-bottom: 18px;
 }
-.astext:focus {
+.readMore:focus {
   outline: 0;
 }
 

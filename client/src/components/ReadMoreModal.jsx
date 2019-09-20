@@ -45,7 +45,7 @@ export default class ReadMoreModal extends React.Component {
   render() {
     return (
       <div>
-        <button className="astext" onClick={this.openModal}>
+        <button className="readMore" onClick={this.openModal}>
           Read more
         </button>
         <Modal

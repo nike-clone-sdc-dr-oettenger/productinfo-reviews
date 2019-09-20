@@ -18,8 +18,8 @@ export default class ReviewList extends React.Component {
 
   render() {
     return (
-      <div className="JBodyReviewList">
-        <div id="reviewButton" className="JBody" onClick={this.review}>
+      <div className="JBodyReviewList" onClick={this.review}>
+        <div id="reviewButton" className="JBody">
           <div className="JReviews">
             <div className="JColumnA">
               Reviews ({this.props.reviews.length})
