@@ -172,12 +172,9 @@ export default class App extends React.Component {
             onClick={this.shipping}
           >
             <div className="JFreeshippingA">Free Shipping & Returns</div>
-            <div className="JfreeshippingB">Carrot </div>
+            <div className="JfreeshippingB"> </div>
           </div>
-          {/* <div id="freeShippingButton" onClick={this.shipping}>
-          <button id="freeShippingButton" className="freeShippingButton">
-            Free Shipping & Returns
-          </button> */}
+
           {this.state.shipping && (
             <div className="JShippingP">
               Free standard shipping and 30-day free returns, only with
