@@ -15,6 +15,50 @@ const NikeReview = mongoose.model('NikeReview', {
   review_title: String
 });
 
-module.exports = NikeReview;
+const postToDb = function(obj) {
+  var tempModel = new NikeReview({
+    shoe_id: obj.shoe_id,
+    review_star: obj.review_star,
+    review_body: obj.review_body,
+    review_username: obj.review_username,
+    review_data: obj.review_data,
+    review_location: obj.review_location,
+    upStar: obj.upStar,
+    downStar: obj.downStar,
+    review_title: obj.review_title
+  });
+  return tempModel.save()
+}
+
+const deleteDoc = function(id, cb) {
+  NikeReview.deleteOne({shoe_id: id}, function(err) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(`deleted shoe with id of ${id}`);
+      cb.end();
+    }
+  })  
+}
+
+const updateDoc = function(id, update, res) {
+  let conditions = {shoe_id: id};
+  console.log('******************************************************** \n', update);
+  NikeReview.findOneAndUpdate(conditions, update, function(err, product) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(`updated shoe: ${id}`);
+      res.end()
+    }
+  })
+}
+
+module.exports = {
+  NikeReview,
+  postToDb,
+  deleteDoc,
+  updateDoc
+}
 
 //review update

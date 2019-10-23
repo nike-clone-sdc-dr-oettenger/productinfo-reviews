@@ -3,31 +3,30 @@ const app = express();
 const port = 3000;
 const bodyParser = require('body-parser');
 //const NikeReview = require('../db/index.js');
-const {NikeReview, postToDb, deleteDoc, updateDoc} = require('../db/index.js')
+//const {NikeReview, postToDb, deleteDoc, updateDoc} = require('../db/index.js')
+const {getFromCouch, insertToCouch} = require('../db/couchDbIndex.js');
 const cors = require('cors');
 
 app.use(express.static('public/dist'));
 app.use(bodyParser.json());
+
 app.use(cors());
 
-process.title = 'NikeReview';
+app.listen(port, () =>
+  console.log(`Nike Review Component listening on port ${port}!`)
+);
 
 app.get('/api/reviews', (req, res) => {
-  let shoe = req.query.shoe_id;
-
-  NikeReview.find({ shoe_id: shoe }, (err, reviews) => {
-    if (err) {
-      res.status(404).send(`you have an error: ${err}`);
-    } else {
-      res.status(200).send(reviews);
-    }
-  });
+  console.log('express get request');
+  getFromCouch(Number(req.query.shoeId)).then(function(prod) {
+    res.send(prod)
+  })
 });
 
 app.post('/api/reviews', (req, res) => {
-  postToDb(req.body).then(res.end(),
-    console.log('document saved')
-  );  
+  insertToCouch(req.body).then(function() {
+    res.end();
+  })
 })
 
 app.delete('/api/reviews', (req, res) => {
@@ -38,10 +37,3 @@ app.put('/api/reviews', (req, res) => {
   updateDoc(req.body.id, req.body.updates, res)
 })
 
-app.listen(port, () =>
-  console.log(`Nike Review Component listening on port ${port}!`)
-);
-
-
-
-//review update
