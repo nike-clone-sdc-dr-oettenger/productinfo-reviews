@@ -22,9 +22,12 @@ export default class App extends React.Component {
   getData() {
     axios
       .get(
-        'http://localhost:3000/api/reviews',
-        { crossDomain: true },
-        { params: { shoe_id: 83 } }
+        'http://localhost:3000/api/reviews', {
+          crossDomain: true,
+          params: {
+            shoe_id: 70
+          }
+        }
       )
       .then(data => {
         console.log(data);

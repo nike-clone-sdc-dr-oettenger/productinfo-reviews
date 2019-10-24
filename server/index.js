@@ -14,7 +14,7 @@ process.title = 'NikeReview';
 
 app.get('/api/reviews', (req, res) => {
   let shoe = req.query.shoe_id;
-
+  
   NikeReview.find({ shoe_id: shoe }, (err, reviews) => {
     if (err) {
       res.status(404).send(`you have an error: ${err}`);

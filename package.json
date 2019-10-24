@@ -4,11 +4,11 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "mocha ./spec/spec.js",
-    "server": "nodemon server/index.js",
+    "server": "node server/sqlServer.js",
     "build": "webpack -d --watch",
     "startdev": "webpack-dev-server",
     "seeddata": "node db/seedData.js",
-    "start": "concurrently --kill-others \"npm run seeddata\" \"npm run server\""
+    "start": "node server/sqlServer"
   },
   "babel": {
     "presets": [

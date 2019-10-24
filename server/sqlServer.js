@@ -8,7 +8,7 @@ const {getFromSql, postToSql, deleteFromSql, putToSql} = require('../db/squelize
 const cors = require('cors');
 
 app.use(express.static('public/dist'));
-app.use(bodyParser.json());
+app.use(bodyParser());
 
 app.use(cors());
 
@@ -17,8 +17,13 @@ app.listen(port, () =>
 );
 
 app.get('/api/reviews', (req, res) => {
-  
-  getFromSql(req.query.id).then(function(prod) {
+  res.send('now this is podracing');
+})
+
+/*
+app.get('/api/reviews', (req, res) => {
+  //console.log(req);
+  getFromSql(req.query.shoe_id).then(function(prod) {
     res.send(prod);
     console.log('server side get request complete')
   })
@@ -45,3 +50,4 @@ app.delete('/api/reviews', (req, res) => {
     console.log('document deleted')
   );  
 })
+*/
