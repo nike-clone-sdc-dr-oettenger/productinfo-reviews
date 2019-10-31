@@ -13,7 +13,7 @@ sequelize.authenticate().then(() => {
   console.log('ah fuck', err);
 })
 
-
+//fdgfdfd
 
 var obj = {
   id: {
