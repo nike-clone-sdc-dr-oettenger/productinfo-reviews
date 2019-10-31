@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const faker = require('faker');
 
 const sequelize = new Sequelize('nikeReviews', 'root', 'password', {
-  host: 'localhost',
+  host: '35.160.204.116',
   dialect: 'mysql',
   logging: false
 });
@@ -10,7 +10,7 @@ const sequelize = new Sequelize('nikeReviews', 'root', 'password', {
 sequelize.authenticate().then(() => {
   console.log('yea buddfy');
 }).catch((err) => {
-  console.log('ah fuck', err);
+  console.log('********************************* ah fuck ******************************** \n', err);
 })
 
 
@@ -54,7 +54,7 @@ var obj = {
 
 const Reviews = sequelize.define('review', obj)
 
-//Reviews.sync()
+Reviews.sync()
 //.sync creates database
 
 
@@ -97,7 +97,7 @@ const deleteFromSql = function(id) {
 }
 
 const insert2k = function(index) {
-  if (index < 5000) {
+  if (index < 2) {
   var tempArr = [];
   for (let b = 0; b < 2000; b ++) {
     var star = Math.floor(Math.random() * 6);
@@ -130,6 +130,7 @@ const insert2k = function(index) {
   }
   Reviews.bulkCreate(tempArr).then(function() {
     index ++;
+    console.log('inserted ' + (index * 2000) + ' records into db')
     insert2k(index)
   });
   } else {
@@ -139,7 +140,7 @@ const insert2k = function(index) {
 
 
 
-//insert2k(0);
+insert2k(0);
 module.exports = {
   getFromSql,
   postToSql,
