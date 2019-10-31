@@ -140,7 +140,7 @@ const insert2k = function(index) {
 
 
 
-insert2k(0);
+//insert2k(0);
 module.exports = {
   getFromSql,
   postToSql,

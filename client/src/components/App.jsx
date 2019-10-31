@@ -16,7 +16,7 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getData();
+    //this.getData();
   }
 
   getData() {
@@ -36,7 +36,7 @@ export default class App extends React.Component {
         });
       })
       .catch(err => {
-        console.log(err);
+        console.log('shit', err);
       });
   }
 
