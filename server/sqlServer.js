@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3444;
+const port = 3000;
 const bodyParser = require('body-parser');
 //const NikeReview = require('../db/index.js');
 //const {NikeReview, postToDb, deleteDoc, updateDoc} = require('../db/index.js')
@@ -9,7 +9,7 @@ const cors = require('cors');
 
 
 
-app.use(express.static('public/dist'));
+app.use(express.static('../public/dist'));
 app.use(bodyParser());
 
 app.use(cors());
@@ -19,6 +19,7 @@ app.listen(port, () =>
 );
 
 app.get('/api/reviews', (req, res) => {
+  console.log('recieved get request');
   res.send('now this is podracing');
 })
 

@@ -16,7 +16,7 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    //this.getData();
+    this.getData();
   }
 
   getData() {
@@ -25,12 +25,12 @@ export default class App extends React.Component {
         'http://localhost:3000/api/reviews', {
           crossDomain: true,
           params: {
-            shoe_id: 70
+            shoeid: 70
           }
         }
       )
       .then(data => {
-        console.log(data);
+        console.log('worked', data);
         this.setState({
           dummydata: data.data
         });
