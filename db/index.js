@@ -1,59 +1,64 @@
 const mongoose = require('mongoose');
-// mongoose
-//   .connect(
-//     'mongodb+srv://justinrobertohara:root@justincluster-pvv5d.mongodb.net/test?retryWrites=true&w=majority&authSource=true',
-//     {
-//       useNewUrlParser: true
-//     }
-//   )
-//   .then(() => {
-//     console.log('you have connected to the mongo db');
-//   });
-
-// potential bug fix
-const options = {
-  autoIndex: false, // Don't build indexes
-  reconnectTries: 30, // Retry up to 30 times
-  reconnectInterval: 500, // Reconnect every 500ms
-  poolSize: 10, // Maintain up to 10 socket connections
-  // If not connected, return errors immediately rather than waiting for reconnect
-  bufferMaxEntries: 0,
+mongoose.connect('mongodb://localhost:27017/NikeReview', {
   useNewUrlParser: true
-};
+});
 
-const connectWithRetry = () => {
-  console.log('MongoDB connection with retry');
-  mongoose
-    .connect(
-      'mongodb+srv://justinrobertohara:root@justincluster-pvv5d.mongodb.net/NikeReview?retryWrites=true&w=majority&authSource=true',
-      options
-    )
-    .then(() => {
-      console.log(`MongoDB is connected`);
-    })
-    .catch(err => {
-      console.log('MongoDB connection unsuccessful, retry after 5 seconds.');
-      setTimeout(connectWithRetry, 5000);
-    });
-};
-
-connectWithRetry();
-
-const NikeReviewScehma = new mongoose.Schema({
+const NikeReview = mongoose.model('NikeReview', {
   shoe_id: Number,
   review_star: Number,
   review_body: String,
   review_username: String,
-  review_date: String,
+  review_data: String,
   review_location: String,
-  reviewTitle: String,
   upStar: Number,
   downStar: Number,
   review_title: String
 });
 
-const NikeReview = mongoose.model('NikeReview', NikeReviewScehma);
+const postToDb = function(obj) {
+  var tempModel = new NikeReview({
+    shoe_id: obj.shoe_id,
+    review_star: obj.review_star,
+    review_body: obj.review_body,
+    review_username: obj.review_username,
+    review_data: obj.review_data,
+    review_location: obj.review_location,
+    upStar: obj.upStar,
+    downStar: obj.downStar,
+    review_title: obj.review_title
+  });
+  return tempModel.save()
+}
 
-module.exports = NikeReview;
+const deleteDoc = function(id, cb) {
+  NikeReview.deleteOne({shoe_id: id}, function(err) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(`deleted shoe with id of ${id}`);
+      cb.end();
+    }
+  })  
+}
+
+const updateDoc = function(id, update, res) {
+  let conditions = {shoe_id: id};
+  console.log('******************************************************** \n', update);
+  NikeReview.findOneAndUpdate(conditions, update, function(err, product) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(`updated shoe: ${id}`);
+      res.end()
+    }
+  })
+}
+
+module.exports = {
+  NikeReview,
+  postToDb,
+  deleteDoc,
+  updateDoc
+}
 
 //review update

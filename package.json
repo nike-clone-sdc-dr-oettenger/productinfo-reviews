@@ -4,7 +4,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "mocha ./spec/spec.js",
-    "server": "node server/index.js",
+    "server": "node server/sqlServer.js",
     "server:dev": "nodemon server/index.js",
     "build:dev": "webpack -d --watch",
     "start:dev": "webpack-dev-server",
