@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const faker = require('faker');
 
-const sequelize = new Sequelize('nikeReviews', 'root', 'password', {
+const sequelize = new Sequelize('nikeReviews', 'Marcus', 'password', {
   host: '35.160.204.116',
   dialect: 'mysql',
   logging: false
