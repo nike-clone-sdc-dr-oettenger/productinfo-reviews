@@ -54,7 +54,7 @@ var obj = {
 
 const Reviews = sequelize.define('review', obj)
 
-//Reviews.sync()
+Reviews.sync()
 //.sync creates database
 
 
