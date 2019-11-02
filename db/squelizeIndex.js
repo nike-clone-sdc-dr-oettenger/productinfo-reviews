@@ -97,9 +97,9 @@ const deleteFromSql = function(id) {
 }
 
 const insert2k = function(index) {
-  if (index < 2) {
+  if (index < 10000) {
   var tempArr = [];
-  for (let b = 0; b < 2000; b ++) {
+  for (let b = 0; b < 1000; b ++) {
     var star = Math.floor(Math.random() * 6);
     var body = faker.lorem.paragraphs(
       (nb = 1),
@@ -145,7 +145,8 @@ module.exports = {
   getFromSql,
   postToSql,
   deleteFromSql,
-  putToSql
+  putToSql,
+  insert2k
 }
 
 

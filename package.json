@@ -10,7 +10,8 @@
     "start:dev": "webpack-dev-server",
     "seeddata": "node db/seedData.js",
     "rundb": "mongo",
-    "start": "concurrently --kill-others \"npm run server\""
+    "start": "concurrently --kill-others \"npm run server\"",
+    "seed10mill": "node db/sqlSeed.js"
   },
   "babel": {
     "presets": [
