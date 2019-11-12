@@ -7,12 +7,31 @@ const bodyParser = require('body-parser');
 const {getFromSql, postToSql, deleteFromSql, putToSql} = require('../db/squelizeIndex.js');
 const cors = require('cors');
 
-
+const redis = require('redis');
 
 app.use(express.static('public/dist'));
 app.use(bodyParser());
 
 app.use(cors());
+
+
+var client = redis.createClient({
+  host: 'redis-16798.c1.us-west-2-2.ec2.cloud.redislabs.com',
+  port: '16798',
+  no_ready_check: true
+});
+client.auth('password', function(err) {
+  if (err) {
+    console.log(err);
+  }
+});
+client.on('error', function(err) {
+  console.log('Error ' + err);
+});
+client.on('connect', function() {
+  console.log('yaaayyyyyyyy we are connected');
+});
+
 
 app.listen(port, () =>
   console.log(`Nike Review Component listening on portxgdfsgdfsg ${port}!`)
