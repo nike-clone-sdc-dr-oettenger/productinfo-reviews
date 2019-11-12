@@ -48,11 +48,24 @@ app.get('/loaderio-9263376403b50a059029213754df6b48', (req, res) => {
 
 app.get('/api/reviews', (req, res) => {
   //console.log(req);
-  console.log('recieving real get request');
-  getFromSql(req.query.shoe_id).then(function(prod) {
-    res.send(prod);
-    console.log('server side get request complete')
+  let shoeId = req.query.shoe_id;
+  client.get(shoeId, (err, val) => {
+    if (err) {
+      console.log('redis err', err)
+    } else if (val) {
+      console.log('hit reddis cache');
+      res.send(val)
+    } else {
+      console.log('going to db')
+      getFromSql(req.query.shoe_id).then(function(prod) {
+        res.send(prod);
+        console.log('server side get request complete')
+        client.set(shoeId, prod)
+      })
+    }
   })
+  console.log('recieving real get request');
+
   // getFromSql(req.body).then(res.end(),
   //   console.log('document saved')
   // );  
