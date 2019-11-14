@@ -48,6 +48,7 @@ app.get('/loaderio-9263376403b50a059029213754df6b48', (req, res) => {
 
 app.get('/api/reviews', (req, res) => {
   //console.log(req);
+  console.log('recieving real get request');
   let shoeId = req.query.shoe_id;
   client.get(shoeId, (err, val) => {
     if (err) {
@@ -64,8 +65,6 @@ app.get('/api/reviews', (req, res) => {
       })
     }
   })
-  console.log('recieving real get request');
-
   // getFromSql(req.body).then(res.end(),
   //   console.log('document saved')
   // );  
