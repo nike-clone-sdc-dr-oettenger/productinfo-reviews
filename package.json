@@ -6,7 +6,7 @@
     "test": "mocha ./spec/spec.js",
     "server": "node server/sqlServer.js",
     "server:dev": "nodemon server/index.js",
-    "build:dev": "webpack -d --watch",
+    "webpack": "webpack -d --watch",
     "start:dev": "webpack-dev-server",
     "seeddata": "node db/seedData.js",
     "rundb": "mongo",

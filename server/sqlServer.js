@@ -9,7 +9,9 @@ const cors = require('cors');
 
 const redis = require('redis');
 
-app.use(express.static('public/dist'));
+
+
+app.use(express.static('../public/dist'));
 app.use(bodyParser());
 
 app.use(cors());
@@ -32,15 +34,17 @@ client.on('connect', function() {
   console.log('yaaayyyyyyyy we are connected');
 });
 
-
-app.listen(port, () =>
-  console.log(`Nike Review Component listening on portxgdfsgdfsg ${port}!`)
-);
-
-// app.get('/api/reviews', (req, res) => {
-//   console.log('recieved get request');
-//   res.send('now this is podracing');
+// app.get('/', function (req, res) {
+//   console.log('page loaded');
+//   res.sendFile('/Users/marcus/Code/productinfo-reviews/public/dist/index.html');
+//   //res.send('please work bro');
 // })
+
+
+
+
+
+
 
 app.get('/loaderio-9263376403b50a059029213754df6b48', (req, res) => {
   res.send('loaderio-9263376403b50a059029213754df6b48');
@@ -88,3 +92,7 @@ app.delete('/api/reviews', (req, res) => {
     console.log('document deleted')
   );  
 })
+
+app.listen(3000, () =>
+  console.log(`Nike Review Component listening on port ${port}!`)
+);
