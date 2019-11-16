@@ -1,43 +1,43 @@
-**Set up Instance:**
+**Set up Instance:**\
 Do all the normal stuff\
-chmod 400 something idk
-sudo yum install -y gcc-c++ make
-curl -sL https://rpm.nodesource.com/setup_6.x | sudo -E bash -
-sudo yum install nodejs
-sudo yum install git
-git clone my repo
-cd my repo
-git checkout review
-sudo npm install
-npm run server
+chmod 400 something idk\
+sudo yum install -y gcc-c++ make\
+curl -sL https://rpm.nodesource.com/setup_6.x | sudo -E bash -\
+sudo yum install nodejs\
+sudo yum install git\
+git clone my repo\
+cd my repo\
+git checkout review\
+sudo npm install\
+npm run server\
 
-**Set up Database:**
-wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm
-sudo rpm -Uvh mysql80-community-release-el6-n.noarch.rpm
-sudo yum-config-manager --disable mysql80-community
-sudo yum-config-manager --enable mysql57-community
-sudo yum install mysql-community-server
-sudo service mysqld start
-sudo grep 'temporary password' /var/log/mysqld.log
-ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass4!';
+**Set up Database:**\
+wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm\
+sudo rpm -Uvh mysql80-community-release-el6-n.noarch.rpm\
+sudo yum-config-manager --disable mysql80-community\
+sudo yum-config-manager --enable mysql57-community\
+sudo yum install mysql-community-server\
+sudo service mysqld start\
+sudo grep 'temporary password' /var/log/mysqld.log\
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass4!';\
 
-I later deleted the validate password plugin so I could set a simpler password
-I also needed to create users for my micros and give them permission
+I later deleted the validate password plugin so I could set a simpler password\
+I also needed to create users for my micros and give them permission\
 
-CREATE USER 'Marcus'@'Instance Ip' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON database_name.* TO 'Marcus'@'Instance Ip';
+CREATE USER 'Marcus'@'Instance Ip' IDENTIFIED BY 'password';\
+GRANT ALL PRIVILEGES ON database_name.* TO 'Marcus'@'Instance Ip';\
 
-**Seeding DataBase:**
-I changed the host address to the address of my database instance
-npm run seed
+**Seeding DataBase:**\
+I changed the host address to the address of my database instance\
+npm run seed\
 
-**Endpoints:**
-Get /api/reviews?shoe_id=<id>
-Post /api/reviews
-Put /api/reviews?shoe_id=<id>
-Delete /api/reviews?shoe_id=<id>
+**Endpoints:**\
+Get /api/reviews?shoe_id=<id>\
+Post /api/reviews\
+Put /api/reviews?shoe_id=<id>\
+Delete /api/reviews?shoe_id=<id>\
   
-**Speed Testing:**
+**Speed Testing:**\
 
 Micro
 
