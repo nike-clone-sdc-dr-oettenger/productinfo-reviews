@@ -55,22 +55,22 @@ app.get('/api/reviews', (req, res) => {
   //console.log(req);
   console.log('recieving real get request');
   let shoeId = req.query.shoe_id;
-  client.get(shoeId, (err, val) => {
-    if (err) {
-      console.log('redis err', err)
-    } else if (val) {
-      console.log('hit reddis cache');
-      res.send(JSON.parse(val))
-    } else {
-      console.log('going to db')
+  //client.get(shoeId, (err, val) => {
+    //if (err) {
+      //console.log('redis err', err)
+    //} else if (val) {
+      //console.log('hit reddis cache');
+      //res.send(JSON.parse(val))
+    //} else {
+      //console.log('going to db')
       getFromSql(req.query.shoe_id).then(function(prod) {
-        client.set(shoeId, JSON.stringify(prod))
+        //client.set(shoeId, JSON.stringify(prod))
         res.send(prod);
         console.log('server side get request complete')
         
       })
-    }
-  })
+   // }
+  //})
   // getFromSql(req.body).then(res.end(),
   //   console.log('document saved')
   // );  
