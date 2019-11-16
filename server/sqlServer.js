@@ -63,9 +63,10 @@ app.get('/api/reviews', (req, res) => {
     } else {
       console.log('going to db')
       getFromSql(req.query.shoe_id).then(function(prod) {
+        client.set(shoeId, JSON.stringify(prod))
         res.send(prod);
         console.log('server side get request complete')
-        client.set(shoeId, prod)
+        
       })
     }
   })
