@@ -71,9 +71,9 @@ app.get('/api/reviews', (req, res) => {
       })
     }
   })
-   getFromSql(req.body).then(res.end(),
-     console.log('document saved')
-   );  
+  //  getFromSql(req.body).then(res.end(),
+  //    console.log('document saved')
+  //  );  
 });
 
 app.post('/api/reviews', (req, res) => {
