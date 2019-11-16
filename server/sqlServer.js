@@ -47,8 +47,8 @@ client.on('connect', function() {
 
 
 
-app.get('/loaderio-9263376403b50a059029213754df6b48', (req, res) => {
-  res.send('loaderio-9263376403b50a059029213754df6b48');
+app.get('/loaderio-662aeea0b1bfb48c7f7539d232357d50', (req, res) => {
+  res.send('loaderio-662aeea0b1bfb48c7f7539d232357d50');
 })
 
 app.get('/api/reviews', (req, res) => {
