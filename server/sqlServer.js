@@ -47,33 +47,30 @@ client.on('connect', function() {
 
 
 
-app.get('/loaderio-662aeea0b1bfb48c7f7539d232357d50', (req, res) => {
-  res.send('loaderio-662aeea0b1bfb48c7f7539d232357d50');
+app.get('/loaderio-9263376403b50a059029213754df6b48', (req, res) => {
+  res.send('loaderio-9263376403b50a059029213754df6b48');
 })
 
 app.get('/api/reviews', (req, res) => {
   //console.log(req);
   console.log('recieving real get request');
   let shoeId = req.query.shoe_id;
-  client.get(shoeId, (err, val) => {
-    if (err) {
-      console.log('redis err', err)
-    } else if (val) {
-      console.log('hit reddis cache');
-      res.send(JSON.parse(val))
-    } else {
+  //client.get(shoeId, (err, val) => {
+    //if (err) {
+      //console.log('redis err', err)
+    //} else if (val) {
+      //console.log('hit reddis cache');
+     // res.send(JSON.parse(val))
+    //} else {
       console.log('going to db')
       getFromSql(req.query.shoe_id).then(function(prod) {
-        client.set(shoeId, JSON.stringify(prod))
+        //client.set(shoeId, JSON.stringify(prod))
         res.send(prod);
         console.log('server side get request complete')
         
       })
-    }
-  })
-  //  getFromSql(req.body).then(res.end(),
-  //    console.log('document saved')
-  //  );  
+    //}
+  //})
 });
 
 app.post('/api/reviews', (req, res) => {
