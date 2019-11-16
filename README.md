@@ -40,18 +40,21 @@ Delete /api/reviews?shoe_id=<id>
 **Speed Testing:**
 
 Micro
+
 | Method | 1 rps | 10 rps | 100 rps | 1000rps | 5000 rps |
 |--------|-------|--------|---------|---------|----------|
 | Get | 76 ms, %0 err | 75 ms, %0 err | 73 ms, %0 err | 1733ms, %0 err |
 | Post | 78 ms, %0 err | 72 ms, %0 err | 72 ms, %0 err | 72 ms, %0 err | 2809 ms, %54.5 err |
 
 My load balancer
+
 | Method | 1 rps | 10 rps | 100 rps | 1000rps |
 |--------|-------|--------|---------|---------|
 | Get | bad | worse | terrible | god help me |
 | Post | PLEASE | MAKE | IT | STOP |
 
 Nginx load balancer
+
 | Method | 1 rps | 10 rps | 100 rps | 1000 rps | 5000 rps | 3000 rps |
 |--------|-------|--------|---------|----------|----------|----------|
 | Get | 73 ms, %0 err | 75 ms, %0 err | 72 ms, %0 err | 73 ms, %0 err | didn't work | 1533 ms, %30.1 err |
