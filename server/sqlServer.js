@@ -59,7 +59,7 @@ app.get('/api/reviews', (req, res) => {
       console.log('redis err', err)
     } else if (val) {
       console.log('hit reddis cache');
-      res.send(val)
+      res.send(JSON.parse(val))
     } else {
       console.log('going to db')
       getFromSql(req.query.shoe_id).then(function(prod) {

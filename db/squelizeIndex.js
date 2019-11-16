@@ -61,7 +61,7 @@ Reviews.sync()
 const getFromSql = function(id) {
   console.log('**************************************** \n', id)
   return Reviews.findOne({ where: {id: id} }).then(project => {
-    console.log(`found ur project: \n ${project}`)
+    console.log(`found ur project: \n ${JSON.stringify(project)}`)
     return project;
   }).catch(function(err) {
     console.log('failed to retrieve from db \n', err);
